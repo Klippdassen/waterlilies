@@ -1,4 +1,4 @@
-const lilyCount = 20;
+const lilyCount = 25;
 const container = document.querySelector('.lilies-container');
 
 for (let i = 0; i < lilyCount; i++) {
