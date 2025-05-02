@@ -22,8 +22,8 @@ body, html {
 
 .lily {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 120px;
+  height: 120px;
   background-image: url('https://cdn.pixabay.com/photo/2017/08/14/15/04/water-lily-2640783_1280.jpg'); /* Example water lily image */
   background-size: cover;
   pointer-events: none;
