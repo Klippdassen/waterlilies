@@ -18,21 +18,19 @@ body, html {
 
 .lilies-container {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
 }
 
 .lily {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(#cceeff, #88bbd6);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   pointer-events: none;
   animation-name: float;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  animation-duration: 8s;
+
 }
 
 @keyframes float {

@@ -1,6 +1,5 @@
-const container = document.querySelector('.lilies-container');
-
-const lilyImages = [
+// Define two groups of lily images
+const lilyImagesSetA = [
   'img/2zmINJsZNy/1XlmdaZDiE.png',
   'img/2zmINJsZNy/3poTMG1A6q.png',
   'img/2zmINJsZNy/6AwwcL4GNW.png',
@@ -38,15 +37,60 @@ const lilyImages = [
   'img/2zmINJsZNy/XVFPdzz6hV.png'
 ];
 
+const lilyImagesSetB = [
+  'img/hYvuizuitU/2klQB6yT5s.png',
+  'img/hYvuizuitU/4EtI5Rxcgc.png',
+  'img/hYvuizuitU/4O9j4sIcz6.png',
+  'img/hYvuizuitU/ABMAeXQUs1.png',
+  'img/hYvuizuitU/AS6pAQSxRe.png',
+  'img/hYvuizuitU/azI1keomIF.png',
+  'img/hYvuizuitU/b3NOQxkOLr.png',
+  'img/hYvuizuitU/C9AIlmXHzR.png',
+  'img/hYvuizuitU/cKRhC2rSky.png',
+  'img/hYvuizuitU/DTRepgWZaO.png',
+  'img/hYvuizuitU/dYzlguUnKV.png',
+  'img/hYvuizuitU/fzfgKGYfz3.png',
+  'img/hYvuizuitU/k04xDvifT7.png',
+  'img/hYvuizuitU/kYXQKLCV4b.png',
+  'img/hYvuizuitU/l93iAdT3LM.png',
+  'img/hYvuizuitU/lx1GeCt3c1.png',
+  'img/hYvuizuitU/Mai2ILwjtT.png',
+  'img/hYvuizuitU/mqcgK4GgVn.png',
+  'img/hYvuizuitU/rKXLPlEIKF.png',
+  'img/hYvuizuitU/RMWn5mx6zq.png',
+  'img/hYvuizuitU/S0W2Nc5mxB.png',
+  'img/hYvuizuitU/SaXrEQhixJ.png',
+  'img/hYvuizuitU/UEbV5PQiba.png',
+  'img/hYvuizuitU/UfryJ7DObr.png',
+  'img/hYvuizuitU/V9CX7P6gHs.png',
+  'img/hYvuizuitU/xHctpBLyNl.png',
+  'img/hYvuizuitU/YBouF1ypaA.png',
+  'img/hYvuizuitU/YX4YRvhbUG.png',
+  'img/hYvuizuitU/zbmsYrQW2G.png',
+  'img/hYvuizuitU/ZBNuJscthZ.png'
+];
+
+// Check URL parameters to determine which set of lily images to use
+const urlParams = new URLSearchParams(window.location.search);
+const selectedSet = urlParams.get('set');
+
+// Choose the active lilyImages array based on the 'set' parameter
+const lilyImages = selectedSet === 'B' ? lilyImagesSetB : lilyImagesSetA;
+
+// Select the container element where lilies will be placed
+const container = document.querySelector('.lilies-container');
+
+// Store placed lilies to avoid overlapping during placement
 const placedLilies = [];
 
+// Create and place each lily with styling and animation
 lilyImages.forEach(image => {
   const lily = document.createElement('div');
   lily.classList.add('lily');
 
   lily.style.backgroundImage = `url('${image}')`;
 
-  const size = 150 + Math.random() * 150;
+  const size = 100 + Math.random() * 100;
   lily.style.width = `${size}px`;
   lily.style.height = `${size}px`;
 
@@ -54,11 +98,13 @@ lilyImages.forEach(image => {
   let attempts = 0;
   let tooClose;
 
+  // Attempt to find a position that does not overlap with existing lilies
   do {
     tooClose = false;
     top = Math.random() * (window.innerHeight - size);
     left = Math.random() * (window.innerWidth - size);
 
+    // Check distance from all previously placed lilies to avoid overlap
     for (const placed of placedLilies) {
       const dx = placed.left - left;
       const dy = placed.top - top;
@@ -75,9 +121,9 @@ lilyImages.forEach(image => {
   lily.style.top = `${top}px`;
   lily.style.left = `${left}px`;
 
-  // Animation timing
+  // Set random animation delay and duration for natural effect
   lily.style.animationDelay = `${Math.random() * 5}s`;
-  lily.style.animationDuration = `${6 + Math.random() * 4}s`;
+  lily.style.animationDuration = `${6 + Math.random() * 15}s`;
 
   placedLilies.push({ top, left, size });
 
