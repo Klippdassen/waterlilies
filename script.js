@@ -93,11 +93,11 @@ lilyImages.forEach(image => {
   // Adjust lily size dynamically based on screen width for responsive layout
   let baseSize;
   if (window.innerWidth < 480) {
-    baseSize = 20;
+    baseSize = 30;
   } else if (window.innerWidth < 1024) {
     baseSize = 40;
   } else {
-    baseSize = 125;
+    baseSize = 110;
   }
   const size = baseSize + Math.random() * baseSize;
   lily.style.width = `${size}px`;
