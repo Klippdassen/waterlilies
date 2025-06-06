@@ -1,11 +1,41 @@
-const lilyCount = 3; // Match the number of images or go higher
+const lilyCount = 34; // Match the number of images or go higher
 const container = document.querySelector('.lilies-container');
 
 const lilyImages = [
-  'https://cdn.pixabay.com/photo/2017/08/14/15/04/water-lily-2640783_1280.jpg',
-  'https://cdn.pixabay.com/photo/2018/03/02/09/04/lotus-3192656_1280.png',
-  'https://cdn.pixabay.com/photo/2014/11/25/19/02/lotus-545512_1280.png',
-  // Add more URLs up to 30
+  'img/2zmINJsZNy/1XlmdaZDiE.png',
+  'img/2zmINJsZNy/3poTMG1A6q.png',
+  'img/2zmINJsZNy/6AwwcL4GNW.png',
+  'img/2zmINJsZNy/8HezEgdn4p.png',
+  'img/2zmINJsZNy/8tHBT7qWVF.png',
+  'img/2zmINJsZNy/bGmg2A3siJ.png',
+  'img/2zmINJsZNy/f5ZUSkJIQ4.png',
+  'img/2zmINJsZNy/fF8YLJwbRb.png',
+  'img/2zmINJsZNy/iwET2rmYbZ.png',
+  'img/2zmINJsZNy/jinQkOzflM.png',
+  'img/2zmINJsZNy/Jv0sbMoW7u.png',
+  'img/2zmINJsZNy/kdZmyMGcO5.png',
+  'img/2zmINJsZNy/kY4XvHdu8k.png',
+  'img/2zmINJsZNy/Nsz8AU6ROO.png',
+  'img/2zmINJsZNy/NtyRFDxlU5.png',
+  'img/2zmINJsZNy/NZaXtbX0tj.png',
+  'img/2zmINJsZNy/OiAdYaBGtM.png',
+  'img/2zmINJsZNy/PQgxcZHqE6.png',
+  'img/2zmINJsZNy/puuUoCY89G.png',
+  'img/2zmINJsZNy/QggF4cLGeE.png',
+  'img/2zmINJsZNy/qzrLAcaRUT.png',
+  'img/2zmINJsZNy/RWkb8QcYx5.png',
+  'img/2zmINJsZNy/SiTrz9QJ8E.png',
+  'img/2zmINJsZNy/sK0VjEb6x0.png',
+  'img/2zmINJsZNy/Skq3nbA0zj.png',
+  'img/2zmINJsZNy/sWT2Po0DEj.png',
+  'img/2zmINJsZNy/tbm7HtqTbb.png',
+  'img/2zmINJsZNy/tEwGZV2o7U.png',
+  'img/2zmINJsZNy/tIsibnoMgu.png',
+  'img/2zmINJsZNy/wRh5pj3nXK.png',
+  'img/2zmINJsZNy/wTZ5JQZE8G.png',
+  'img/2zmINJsZNy/x3dU4p0IOe.png',
+  'img/2zmINJsZNy/xPSRWaNzR6.png',
+  'img/2zmINJsZNy/XVFPdzz6hV.png'
 ];
 
 for (let i = 0; i < lilyCount; i++) {
