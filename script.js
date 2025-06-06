@@ -17,6 +17,7 @@ const lilyImages = [
   'img/2zmINJsZNy/Nsz8AU6ROO.png',
   'img/2zmINJsZNy/NtyRFDxlU5.png',
   'img/2zmINJsZNy/NZaXtbX0tj.png',
+  'img/2zmINJsZNy/OCCB81lmAO.png',
   'img/2zmINJsZNy/OiAdYaBGtM.png',
   'img/2zmINJsZNy/PQgxcZHqE6.png',
   'img/2zmINJsZNy/puuUoCY89G.png',
