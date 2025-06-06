@@ -1,4 +1,3 @@
-const lilyCount = 34; // Match the number of images or go higher
 const container = document.querySelector('.lilies-container');
 
 const lilyImages = [
@@ -38,13 +37,12 @@ const lilyImages = [
   'img/2zmINJsZNy/XVFPdzz6hV.png'
 ];
 
-for (let i = 0; i < lilyCount; i++) {
+lilyImages.forEach(image => {
   const lily = document.createElement('div');
   lily.classList.add('lily');
 
-  // Random image
-  const imageIndex = Math.floor(Math.random() * lilyImages.length);
-  lily.style.backgroundImage = `url('${lilyImages[imageIndex]}')`;
+  // Assign current image
+  lily.style.backgroundImage = `url('${image}')`;
 
   // Random start position
   lily.style.top = Math.random() * window.innerHeight + 'px';
@@ -57,4 +55,4 @@ for (let i = 0; i < lilyCount; i++) {
   lily.style.height = `${size}px`;
 
   container.appendChild(lily);
-}
+});
