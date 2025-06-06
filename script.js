@@ -37,22 +37,48 @@ const lilyImages = [
   'img/2zmINJsZNy/XVFPdzz6hV.png'
 ];
 
+const placedLilies = [];
+
 lilyImages.forEach(image => {
   const lily = document.createElement('div');
   lily.classList.add('lily');
 
-  // Assign current image
   lily.style.backgroundImage = `url('${image}')`;
 
-  // Random start position
-  lily.style.top = Math.random() * window.innerHeight + 'px';
-  lily.style.left = Math.random() * window.innerWidth + 'px';
-
-  // Optional: Different animation delay and size
-  lily.style.animationDelay = `${Math.random() * 5}s`;
-  const size = 150 + Math.random() * 150; // Between 150–300px
+  const size = 150 + Math.random() * 150;
   lily.style.width = `${size}px`;
   lily.style.height = `${size}px`;
+
+  let top, left;
+  let attempts = 0;
+  let tooClose;
+
+  do {
+    tooClose = false;
+    top = Math.random() * (window.innerHeight - size);
+    left = Math.random() * (window.innerWidth - size);
+
+    for (const placed of placedLilies) {
+      const dx = placed.left - left;
+      const dy = placed.top - top;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance < (placed.size + size) / 2) {
+        tooClose = true;
+        break;
+      }
+    }
+
+    attempts++;
+  } while (tooClose && attempts < 50);
+
+  lily.style.top = `${top}px`;
+  lily.style.left = `${left}px`;
+
+  // Animation timing
+  lily.style.animationDelay = `${Math.random() * 5}s`;
+  lily.style.animationDuration = `${6 + Math.random() * 4}s`;
+
+  placedLilies.push({ top, left, size });
 
   container.appendChild(lily);
 });
